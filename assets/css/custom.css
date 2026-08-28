@@ -100,21 +100,28 @@ a:hover {
 }
 
 .hero-photo {
-	flex: 0 0 50%;
-	max-width: 50%;
+	flex: 0 0 40%;
+	max-width: 40%;
+	background: #f6f4f9;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .hero-photo img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-	object-position: center 15%;
+	object-fit: contain;
+	object-position: center;
 	display: block;
 }
 
 .hero-text {
-	flex: 0 0 50%;
-	max-width: 50%;
+	flex: 0 0 60%;
+	max-width: 60%;
 	background: #ffffff;
 	color: #1c1c1e;
 	padding: 3.5rem 3.25rem;
@@ -164,6 +171,7 @@ a:hover {
 
 	.hero-photo img {
 		height: 60vh;
+		object-fit: contain;
 	}
 
 	.hero-text {
