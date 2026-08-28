@@ -93,9 +93,9 @@ a:hover {
 	display: -ms-flex;
 	display: flex;
 	align-items: stretch;
-	max-width: 78rem;
+	max-width: 64rem;
 	width: 100%;
-	min-height: 34rem;
+	min-height: 28rem;
 	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
 }
 
@@ -129,6 +129,14 @@ a:hover {
 .hero-text h1,
 .hero-text p {
 	color: #1c1c1e;
+}
+
+.hero-text p {
+	text-align: justify;
+}
+
+.hero-text .major {
+	text-align: left;
 }
 
 .hero-email a {
