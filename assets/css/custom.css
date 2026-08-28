@@ -1,4 +1,26 @@
 /* Custom additions for Ariel Chan's site */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+	--accent-purple: #b391e0;
+}
+
+body, input, select, textarea {
+	font-family: "Inter", "Source Sans Pro", Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.site-nav a.brand {
+	font-family: "Fraunces", Georgia, serif;
+	font-weight: 600;
+}
+
+/* Link highlight color, matching the pub-tag purple */
+a:hover {
+	color: var(--accent-purple) !important;
+}
+
 .site-nav {
 	background: #14141a;
 	padding: 0.9em 2em;
@@ -6,7 +28,7 @@
 	align-items: center;
 	justify-content: flex-end;
 	gap: 2em;
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Inter", sans-serif;
 	font-size: 0.85em;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
@@ -19,7 +41,7 @@
 }
 
 .site-nav a:hover {
-	color: #b391e0;
+	color: var(--accent-purple) !important;
 }
 
 .site-nav a.brand {
@@ -27,7 +49,7 @@
 	font-weight: 600;
 	letter-spacing: 0.02em;
 	text-transform: none;
-	font-size: 1.1em;
+	font-size: 1.15em;
 }
 
 .pub-entry {
@@ -43,6 +65,55 @@
 	font-size: 0.7em;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	color: #b391e0;
+	color: var(--accent-purple);
 	margin-right: 0.75em;
+}
+
+/* Portrait banner: contained, centered, not oversized */
+.banner.style1 {
+	min-height: 0;
+}
+
+.banner.style1 .image {
+	min-height: 30rem;
+	max-height: 42rem;
+}
+
+.banner.style1 .image img {
+	object-fit: cover;
+	object-position: center 20%;
+}
+
+@media screen and (orientation: portrait) {
+	.banner.style1 .image {
+		max-height: 34vh;
+	}
+}
+
+/* Hong Kong skyline fixed background section */
+.section-hkbg {
+	position: relative;
+	background-image: linear-gradient(rgba(10, 12, 20, 0.72), rgba(10, 12, 20, 0.72)), url("../../images/hk-skyline.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	color: #f4f4f4;
+}
+
+.section-hkbg h2 {
+	color: #ffffff;
+}
+
+.section-hkbg a {
+	color: #e7dcf7;
+}
+
+.section-hkbg a:hover {
+	color: var(--accent-purple) !important;
+}
+
+@media screen and (max-width: 980px) {
+	.section-hkbg {
+		background-attachment: scroll;
+	}
 }
