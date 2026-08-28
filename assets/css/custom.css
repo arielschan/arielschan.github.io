@@ -100,28 +100,24 @@ a:hover {
 }
 
 .hero-photo {
-	flex: 0 0 40%;
-	max-width: 40%;
-	background: #f6f4f9;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	/* Sized from the photo's own aspect ratio (2:3 portrait) against the card's
+	   height, so it fills top-to-bottom with no letterbox bars, and the white
+	   bio panel just takes whatever width is left over. */
+	flex: 0 0 auto;
+	aspect-ratio: 2 / 3;
+	align-self: stretch;
 }
 
 .hero-photo img {
 	width: 100%;
 	height: 100%;
-	object-fit: contain;
+	object-fit: cover;
 	object-position: center;
 	display: block;
 }
 
 .hero-text {
-	flex: 0 0 60%;
-	max-width: 60%;
+	flex: 1 1 auto;
 	background: #ffffff;
 	color: #1c1c1e;
 	padding: 3.5rem 3.25rem;
@@ -167,11 +163,15 @@ a:hover {
 	.hero-text {
 		flex: 0 0 auto;
 		max-width: 100%;
+		aspect-ratio: auto;
+		align-self: auto;
+		width: 100%;
 	}
 
 	.hero-photo img {
 		height: 60vh;
-		object-fit: contain;
+		width: 100%;
+		object-fit: cover;
 	}
 
 	.hero-text {
