@@ -69,7 +69,7 @@ a:hover {
 	margin-right: 0.75em;
 }
 
-/* Hero: fixed Hong Kong skyline background with a white card for bio + photo */
+/* Hero: fixed Hong Kong skyline background framing a flush photo + bio split (no card chrome) */
 .hero-hkbg {
 	position: relative;
 	min-height: 100vh;
@@ -79,47 +79,51 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-image: linear-gradient(rgba(10, 12, 20, 0.2), rgba(10, 12, 20, 0.2)), url("../../images/hk-skyline.jpg");
+	background-image: url("../../images/hk-skyline.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
-	padding: 6rem 2rem;
+	padding: 4rem 2rem;
 	text-align: left;
 }
 
 .hero-card {
-	background: rgba(255, 255, 255, 0.88);
-	-webkit-backdrop-filter: blur(8px);
-	backdrop-filter: blur(8px);
-	border-radius: 20px;
-	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
-	padding: 3rem;
 	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
-	align-items: center;
-	gap: 3rem;
-	max-width: 60rem;
+	align-items: stretch;
+	max-width: 78rem;
 	width: 100%;
-	color: #1c1c1e;
+	min-height: 34rem;
+	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
 }
 
 .hero-photo {
-	flex-shrink: 0;
+	flex: 0 0 50%;
+	max-width: 50%;
 }
 
 .hero-photo img {
-	width: 240px;
-	height: 300px;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 	object-position: center 15%;
-	border-radius: 14px;
 	display: block;
 }
 
 .hero-text {
-	flex-grow: 1;
+	flex: 0 0 50%;
+	max-width: 50%;
+	background: #ffffff;
+	color: #1c1c1e;
+	padding: 3.5rem 3.25rem;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .hero-text h1,
@@ -127,23 +131,46 @@ a:hover {
 	color: #1c1c1e;
 }
 
-@media screen and (max-width: 736px) {
+.hero-email a {
+	color: #1c1c1e;
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
 	.hero-hkbg {
-		padding: 3rem 1.25rem;
+		padding: 0;
 		min-height: auto;
 		background-attachment: scroll;
 	}
 
 	.hero-card {
 		flex-direction: column;
-		text-align: center;
-		padding: 2rem;
-		gap: 1.5rem;
+		box-shadow: none;
+	}
+
+	.hero-photo,
+	.hero-text {
+		flex: 0 0 auto;
+		max-width: 100%;
 	}
 
 	.hero-photo img {
-		width: 200px;
-		height: 250px;
-		margin: 0 auto;
+		height: 60vh;
 	}
+
+	.hero-text {
+		padding: 2.5rem 1.5rem;
+		text-align: center;
+		align-items: center;
+	}
+}
+
+/* Button hover: match accent purple (theme's .button:hover otherwise wins on specificity) */
+.button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover {
+	box-shadow: inset 0 0 0 1px var(--accent-purple) !important;
+	color: var(--accent-purple) !important;
 }
