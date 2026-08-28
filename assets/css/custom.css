@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap");
 
 :root {
-	--accent-purple: #b391e0;
+	--accent-purple: #645394;
 }
 
 body, input, select, textarea {
@@ -69,51 +69,81 @@ a:hover {
 	margin-right: 0.75em;
 }
 
-/* Portrait banner: contained, centered, not oversized */
-.banner.style1 {
-	min-height: 0;
-}
-
-.banner.style1 .image {
-	min-height: 30rem;
-	max-height: 42rem;
-}
-
-.banner.style1 .image img {
-	object-fit: cover;
-	object-position: center 20%;
-}
-
-@media screen and (orientation: portrait) {
-	.banner.style1 .image {
-		max-height: 34vh;
-	}
-}
-
-/* Hong Kong skyline fixed background section */
-.section-hkbg {
+/* Hero: fixed Hong Kong skyline background with a white card for bio + photo */
+.hero-hkbg {
 	position: relative;
-	background-image: linear-gradient(rgba(10, 12, 20, 0.72), rgba(10, 12, 20, 0.72)), url("../../images/hk-skyline.jpg");
+	min-height: 100vh;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: linear-gradient(rgba(10, 12, 20, 0.2), rgba(10, 12, 20, 0.2)), url("../../images/hk-skyline.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
-	color: #f4f4f4;
+	padding: 6rem 2rem;
+	text-align: left;
 }
 
-.section-hkbg h2 {
-	color: #ffffff;
+.hero-card {
+	background: rgba(255, 255, 255, 0.88);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	border-radius: 20px;
+	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+	padding: 3rem;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	max-width: 60rem;
+	width: 100%;
+	color: #1c1c1e;
 }
 
-.section-hkbg a {
-	color: #e7dcf7;
+.hero-photo {
+	flex-shrink: 0;
 }
 
-.section-hkbg a:hover {
-	color: var(--accent-purple) !important;
+.hero-photo img {
+	width: 240px;
+	height: 300px;
+	object-fit: cover;
+	object-position: center 15%;
+	border-radius: 14px;
+	display: block;
 }
 
-@media screen and (max-width: 980px) {
-	.section-hkbg {
+.hero-text {
+	flex-grow: 1;
+}
+
+.hero-text h1,
+.hero-text p {
+	color: #1c1c1e;
+}
+
+@media screen and (max-width: 736px) {
+	.hero-hkbg {
+		padding: 3rem 1.25rem;
+		min-height: auto;
 		background-attachment: scroll;
+	}
+
+	.hero-card {
+		flex-direction: column;
+		text-align: center;
+		padding: 2rem;
+		gap: 1.5rem;
+	}
+
+	.hero-photo img {
+		width: 200px;
+		height: 250px;
+		margin: 0 auto;
 	}
 }
