@@ -93,9 +93,9 @@ a:hover {
 	display: -ms-flex;
 	display: flex;
 	align-items: stretch;
-	max-width: 64rem;
+	max-width: 50rem;
 	width: 100%;
-	min-height: 28rem;
+	min-height: 21rem;
 	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
 }
 
