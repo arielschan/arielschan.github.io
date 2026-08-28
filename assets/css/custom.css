@@ -114,8 +114,8 @@ a:hover {
 .hero-photo img {
 	width: 100%;
 	height: 100%;
-	object-fit: contain;
-	object-position: center;
+	object-fit: cover;
+	object-position: center 20%;
 	display: block;
 }
 
@@ -173,7 +173,9 @@ a:hover {
 
 	.hero-photo img {
 		height: 60vh;
-		object-fit: contain;
+		width: 100%;
+		object-fit: cover;
+		object-position: center 20%;
 	}
 
 	.hero-text {
