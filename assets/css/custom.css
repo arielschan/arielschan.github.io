@@ -204,3 +204,9 @@ body, input, select, textarea, p {
 h2 {
 	font-size: 28px;
 }
+
+/* Justify body copy in About and Beyond Research sections */
+#about p,
+#beyond p {
+	text-align: justify;
+}
